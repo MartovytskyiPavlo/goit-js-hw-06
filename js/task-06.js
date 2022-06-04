@@ -15,10 +15,11 @@ const Refs = {
 };
 
 Refs.inputEl.addEventListener('blur', (event) => {
-    event.currentTarget.classList.clear;
-    if (event.currentTarget.value.length != 6) {
-        event.currentTarget.classList.add('invalid');
+    event.currentTarget.classList.remove('valid','invalid');
+    console.log(event.currentTarget.value.length);
+    if (event.currentTarget.value.length == 6) {
+        event.currentTarget.classList.add('valid');
     } else {
-        event.currentTarget.classList.add('valid'); 
+        event.currentTarget.classList.add('invalid'); 
     };
 })
